@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "main": "index.js",
   "scripts": {
+    "webpack": "webpack",
+    "webpack:watch": "webpack --watch",
+    "build": "npm run webpack",
     "server": "node server/server",
-    "start": "npm run server"
+    "start": "npm run server && npm run webpack:watch"
   },
   "author": "",
   "license": "ISC",
