@@ -1,0 +1,19 @@
+{
+  "name": "deadline",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "server": "node server/server",
+    "start": "npm run server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
