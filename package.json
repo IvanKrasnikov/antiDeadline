@@ -6,17 +6,24 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "webpack:watch": "webpack --watch",
-    "build": "npm run webpack",
+    "webpack:watch": "webpack --progress --colors --watch",
     "server": "node server/server",
-    "start": "npm run server && npm run webpack:watch"
+    "start": "npm run server & npm run webpack:watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "css-loader": "2.0.1",
+    "postcss-loader": "3.0.0",
+    "postcss-nested": "4.1.1",
+    "postcss-preset-env": "6.5.0",
+    "style-loader": "0.23.1",
+    "styles-loader": "1.0.0",
+    "uglifyjs-webpack-plugin": "2.0.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   }

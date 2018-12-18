@@ -1,9 +1,7 @@
+@import "./posters.css";
 
-
-
-
-.share-box {}
-.s-hare-links {
-  background: #000;
+.share-box {
 }
-
+.s-hare-links {
+	background: #000;
+}

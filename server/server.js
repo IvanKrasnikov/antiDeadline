@@ -1,13 +1,29 @@
 const path = require("path");
 const express = require("express");
+var bodyParser = require("body-parser");
 
 const app = express();
 const sourceDir = path.resolve(__dirname, "../src");
 
+function drawCanvas() {
+	console.log("drawCanvas");
+	return 'ololo';
+}
+
+app.use(bodyParser.json());
 app.use(express.static(sourceDir, { maxage: 86400000 }));
 
-console.log("sourceDir", sourceDir);
+app.post("/api", function(req, res) {
+	console.log(req.body);
+	res.json(req.body);
+});
 
+app.get("/img", (req, res) => {
+	const image = drawCanvas();
+	res.send(image);
+});
+
+// console.log('process.env', process.env);
 
 // const { createCanvas, loadImage } = require('canvas')
 // const canvas = createCanvas(200, 200)
@@ -34,11 +50,8 @@ console.log("sourceDir", sourceDir);
 // })
 
 // app.get('/', (req, res) => {
+
 //     res.send('Hello Express')
 // });
-
-
-
-
 
 app.listen(process.env.PORT || 2018);

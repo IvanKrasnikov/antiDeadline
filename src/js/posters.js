@@ -1,5 +1,24 @@
-$(function () {
-    console.log('halo posters.js 21');
+$(function() {
+    var posterImage = $("#posterImage"),
+        posterText = $("#posterText"),
+        posterPlaceholder = $("#posterPlaceholder");
+
+    console.log("posterImage", posterImage);
+
+    var req = new XMLHttpRequest();
+
+    req.addEventListener("readystatechange", () => {
+        if (req.readyState === 4) {
+            if (req.status === 200) {
+                console.log("data sended", req.responseText);
+            }
+        }
+    });
+
+    // Send data
+    req.open("POST", "/api");
+    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    req.send(JSON.stringify(["test", "2"]));
 
     // "scripts": {
     //     "browsersync": "browser-sync start --proxy \"localhost:8080\" --files \"src/**/*.ejs\" \"src/assets/**/*\" \"src/**/*.md\" --no-open",
@@ -27,5 +46,4 @@ $(function () {
     //       }
     //     }
     // );
-
 });
